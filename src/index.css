@@ -1,0 +1,55 @@
+
+@import 'bootstrap/dist/css/bootstrap.min.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --main-color: #00a572; 
+}
+
+body {
+margin: 0;
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+}
+
+code {
+font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  monospace;
+}
+
+.gradient-custom {
+
+background: #6a11cb;
+background: -webkit-linear-gradient(
+  to right,
+  rgba(106, 17, 203, 1),
+  rgba(37, 117, 252, 1)
+);
+
+
+}
+
+#typeEmailX::placeholder {
+color: #000000;
+}
+#typePasswordX::placeholder {
+color: #000000;
+}
+
+
+@media (max-width:700px) {
+  table {
+    display: block;
+    max-width: fit-content;
+    margin: 0 auto;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  }
+  
+  

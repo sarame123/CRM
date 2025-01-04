@@ -1,0 +1,247 @@
+:root {
+  --background-light: #f8f8f8; 
+  --text-light: #aaa; 
+  --border-color: #ddd; 
+  --message-left-bg: #e5e5e5; 
+  --message-right-bg: var(--main-color); 
+  --message-text-color: white; 
+  --message-time-color: #999; 
+  --button-hover: #128c7e; 
+  --delete-hover: #f28b82; 
+}
+
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: var(--background-light);
+}
+
+.messages-container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+
+/* Sidebar  */
+.message-list {
+  width: 25%;
+  min-width: 200px;
+  background: #f4f4f9;
+  border-right: 1px solid var(--border-color);
+  overflow-y: auto;
+  padding: 1rem;
+}
+
+.message-list h3 {
+  font-size: 1.25rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.message-item {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  cursor: pointer;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.message-item:hover {
+  background: #e9e9e9;
+  transform: scale(1.02);
+}
+
+.message-item i.user-avatar {
+  font-size: 2rem;
+  color: var(--main-color);
+  margin-right: 15px;
+  flex-shrink: 0;
+}
+
+.message-item h4 {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.message-item p {
+  font-size: 0.85rem;
+  color: #777;
+}
+
+.no-users {
+  color: #999;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+/* Chat  */
+.chat-window {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: var(--background-light);
+}
+
+.chat-header {
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-color);
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chat-header h4 {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.chat-header span {
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+
+
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.chat-messages::-webkit-scrollbar {
+  width: 8px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+  background: var(--main-color);
+  border-radius: 10px;
+}
+
+.message-bubble {
+  max-width: 60%;
+  padding: 0.8rem 1rem;
+  border-radius: 20px;
+  background: var(--message-left-bg);
+  font-size: 0.9rem;
+  word-wrap: break-word;
+}
+
+.message-right {
+  align-self: flex-end;
+  background: var(--message-right-bg);
+  color: var(--message-text-color);
+}
+
+.message-left {
+  align-self: flex-start;
+}
+
+.message-time {
+  font-size: 0.75rem;
+  color: #000;
+  align-self: flex-end;
+  flex-shrink: 0;
+  padding-right: 50px;
+}
+
+/* Chat Input */
+.chat-input {
+  display: flex;
+  gap: 0.5rem;
+  padding: 1rem;
+  background: #fff;
+  border-top: 1px solid var(--border-color);
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 0.8rem;
+  border: 1px solid var(--border-color);
+  border-radius: 25px;
+  font-size: 0.9rem;
+}
+
+.chat-input button {
+  padding: 0.8rem 1.5rem;
+  background: var(--main-color);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.chat-input button:hover {
+  opacity: 0.8;
+}
+
+/* Media Queries */
+@media (max-width: 600px) {
+  .messages-container {
+    flex-direction: column;
+  }
+
+  .message-list {
+    width: 100%;
+    border-right: none;
+    min-height: 50vh;
+  }
+
+  .chat-window {
+    width: 100%;
+    flex: 1;
+  }
+
+  .message-bubble {
+    max-width: 100%;
+  }
+
+  .chat-input button {
+    font-size: 0.8rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  .message-list {
+    width: 30%;
+  }
+
+  .chat-window {
+    width: 70%;
+  }
+
+  .message-bubble {
+    max-width: 80%;
+  }
+}
+
+.chat-input input:focus{
+  outline: var(--main-color);
+  border-color: var(--main-color);
+}
+
+
+/* .message-details{
+  position: absolute;
+  top: 100%;
+  z-index: 999;
+  padding:0!important;
+  margin-top: 5px;
+  
+}
+
+.delete-button{
+  position: absolute;
+  left: 30px;
+  
+} */
